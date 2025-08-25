@@ -42,7 +42,9 @@ public:
     }
 
     T pop(){
-
+        Node<T>* temp = this->head;
+        this->head = this->head->next;
+        return temp->value;
     }
 
     T get(){
@@ -101,5 +103,7 @@ int main(){
     {
         list->push(i);
     }
+    int result = list->pop();
+    std::cout << result << std::endl;
     list->print();
 }
